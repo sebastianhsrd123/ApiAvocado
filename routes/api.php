@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\ClientController;
+use App\Http\Controllers\API\FacturaController;
 use App\Http\Controllers\AutenticarController;
 
 /*
@@ -26,6 +27,7 @@ Route::group(['middleware' => ['cors']], function () {
     Route::post('cliente',[ClientController::class, 'store']);
     Route::post('registro',[AutenticarController::class, 'registro']);
     Route::post('login',[AutenticarController::class, 'login']);
+    Route::post('venta',[FacturaController::class, 'factura']);
     Route::get('producto/{product}',[ProductController::class, 'show']);
 });
 
